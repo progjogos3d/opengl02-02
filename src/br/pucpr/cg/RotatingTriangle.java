@@ -183,6 +183,7 @@ public class RotatingTriangle implements Scene {
 		//Faxina
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glDisableVertexAttribArray(aPosition);
+        glDisableVertexAttribArray(aColor);
 		glBindVertexArray(0);
 		glUseProgram(0);
 	}
