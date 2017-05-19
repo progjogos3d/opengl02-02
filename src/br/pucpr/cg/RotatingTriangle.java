@@ -60,9 +60,9 @@ public class RotatingTriangle implements Scene {
 		//Criação do buffer de posições
 		//------------------------------
 		float[] vertexData = new float[] {
-				0.0f,  0.5f,   //Vértice 1
-				-0.5f, -0.5f,  //Vértice 2
-				0.5f, -0.5f    //Vértice 3
+				0.0f,  0.5f,   //Vértice 0
+				-0.5f, -0.5f,  //Vértice 1
+				0.5f, -0.5f    //Vértice 2
 		};
 
 		//Solicitamos a criação de um buffer na OpenGL, onde esse array será guardado
@@ -79,9 +79,9 @@ public class RotatingTriangle implements Scene {
 		//Criação do buffer de cores
 		//------------------------------
 		float[] colorData = new float[] {
-				1.0f,  0.0f, 0.0f,  //Vértice 1
-				0.0f,  1.0f, 0.0f,  //Vértice 2
-				0.0f,  0.0f, 1.0f,  //Vértice 3
+				1.0f,  0.0f, 0.0f,  //Vértice 0
+				0.0f,  1.0f, 0.0f,  //Vértice 1
+				0.0f,  0.0f, 1.0f,  //Vértice 2
 		};
 
 		//Solicitamos a criação de um buffer na OpenGL, onde esse array será guardado
