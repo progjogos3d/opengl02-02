@@ -59,9 +59,6 @@ public class RotatingTriangle implements Scene {
 
 		//Criação do buffer de posições
 		//------------------------------
-
-		//Criamos um array no java com as posições. Você poderia ter mais de um triângulo nesse mesmo
-		//array. Para isso, bastaria definir mais posições.
 		float[] vertexData = new float[] {
 				0.0f,  0.5f,   //Vértice 1
 				-0.5f, -0.5f,  //Vértice 2
@@ -74,20 +71,13 @@ public class RotatingTriangle implements Scene {
 		glBindBuffer(GL_ARRAY_BUFFER, positions);
 
 		//Damos o comando para carregar esses dados na placa de vídeo
-		//o parametro GL_STATIC_DRAW indica que não mexeremos mais nos valores desses dados em nossa aplicação
 		glBufferData(GL_ARRAY_BUFFER, vertexData, GL_STATIC_DRAW);
 
 		//Como já finalizamos a carga, informamos a OpenGL que não estamos mais usando esse buffer.
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		//Finalizamos o nosso VAO, portanto, informamos a OpenGL que não iremos mais trabalhar com ele
-		glBindVertexArray(0);
-
 		//Criação do buffer de cores
 		//------------------------------
-
-		//Criamos um array no java com as posições. Você poderia ter mais de um triângulo nesse mesmo
-		//array. Para isso, bastaria definir mais posições.
 		float[] colorData = new float[] {
 				1.0f,  0.0f, 0.0f,  //Vértice 1
 				0.0f,  1.0f, 0.0f,  //Vértice 2
@@ -100,7 +90,6 @@ public class RotatingTriangle implements Scene {
 		glBindBuffer(GL_ARRAY_BUFFER, colors);
 
 		//Damos o comando para carregar esses dados na placa de vídeo
-		//o parametro GL_STATIC_DRAW indica que não mexeremos mais nos valores desses dados em nossa aplicação
 		glBufferData(GL_ARRAY_BUFFER, colorData, GL_STATIC_DRAW);
 
 		//Como já finalizamos a carga, informamos a OpenGL que não estamos mais usando esse buffer.
