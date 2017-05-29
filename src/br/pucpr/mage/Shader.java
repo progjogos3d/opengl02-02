@@ -115,12 +115,4 @@ public class Shader {
         }
         return linkProgram(ids);
     }
-
-
-
-
-
-
-
-
 }
