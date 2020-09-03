@@ -140,9 +140,9 @@ public class RotatingTriangle implements Scene {
 
 		//Associação da variável World ao shader
 		//--------------------------------------
-		try (MemoryStack stack = MemoryStack.stackPush()) {
+		try (var stack = MemoryStack.stackPush()) {
 			//Criamos uma matriz de rotação e a enviamos para o buffer transform
-			FloatBuffer transform = new Matrix4f()
+			var transform = new Matrix4f()
 					.rotateY(angle)
 					.get(stack.mallocFloat(16));
 
