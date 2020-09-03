@@ -61,29 +61,6 @@ public class Shader {
     }
 
     /**
-     * Carrega e compila o shader indicado no parâmetro.
-     * @param name Nome do shader a ser carregado
-     * @return O shader compilado.
-     */
-    private static int loadShader(String name) {
-        //Associa o tipo do shader de acordo com a extensão
-        int type;
-        if (name.endsWith(".vert") || name.endsWith(".vs"))
-            type = GL_VERTEX_SHADER;
-        else if (name.endsWith(".frag") || name.endsWith(".fs"))
-            type = GL_FRAGMENT_SHADER;
-        else if (name.endsWith(".geom") || name.endsWith(".gs"))
-            type = GL_GEOMETRY_SHADER;
-        else throw new IllegalArgumentException("Invalid shader name: " + name);
-
-        //Carrega o shader do disco
-        var code = readInputStream(findInputStream(name));
-
-        //Compila o shader
-        return compileShader(type, code);
-    }
-
-    /**
      * Une um vertex e um fragment shader, gerando o shader program que será usado no desenho.
      * O parâmetro de entrada dessa função é um array com o id de todos os shaders que devem ser unidos.
      * @param shaders Ids dos shaders a serem linkados
@@ -110,6 +87,29 @@ public class Shader {
     }
 
     /**
+     * Carrega e compila o shader indicado no parâmetro.
+     * @param name Nome do shader a ser carregado
+     * @return O shader compilado.
+     */
+    private static int loadShader(String name) {
+        //Associa o tipo do shader de acordo com a extensão
+        int type;
+        if (name.endsWith(".vert") || name.endsWith(".vs"))
+            type = GL_VERTEX_SHADER;
+        else if (name.endsWith(".frag") || name.endsWith(".fs"))
+            type = GL_FRAGMENT_SHADER;
+        else if (name.endsWith(".geom") || name.endsWith(".gs"))
+            type = GL_GEOMETRY_SHADER;
+        else throw new IllegalArgumentException("Invalid shader name: " + name);
+
+        //Carrega o shader do disco
+        var code = readInputStream(findInputStream(name));
+
+        //Compila o shader
+        return compileShader(type, code);
+    }
+
+    /**
      * Carrega o shader program formado pelos shaders indicados
      * @param shaders Shaders para carregar
      * @return O id do shader program
@@ -126,12 +126,4 @@ public class Shader {
         }
         return linkProgram(ids);
     }
-
-
-
-
-
-
-
-
 }
